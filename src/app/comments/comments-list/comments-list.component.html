@@ -1,0 +1,12 @@
+
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      Comments
+    </mat-expansion-panel-header>
+    <p *ngFor="let comment of comments$ | async; let last= last">
+      <app-comments-list-item [comment] = comment></app-comments-list-item>
+      <mat-divider *ngIf=!last></mat-divider>
+    </p>
+  </mat-expansion-panel>
+</mat-accordion>

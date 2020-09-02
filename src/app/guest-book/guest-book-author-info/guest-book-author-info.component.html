@@ -1,0 +1,26 @@
+
+<mat-dialog-content>
+  <div *ngIf="author">
+    <div>
+      Name: {{author.name}}
+    </div>
+    <div>
+      Email: {{author.email}}
+    </div>
+    <div>
+      Phone: {{author.phone}}
+    </div>
+    <div>
+      Website: {{author.website}}
+    </div>
+
+  </div>
+
+
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-raised-button color='accent' (click)='close()'>
+    Close
+  </button>
+</mat-dialog-actions>
+

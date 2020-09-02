@@ -8,10 +8,10 @@ import { Post } from './model/post.model';
 })
 export class PostService {
 
-  private apiUrl = `http://jsonplaceholder.typicode.com/posts`;
+  private apiUrl = `http://jsonplaceholder.typicode.com/`;
   constructor(private http: HttpClient) { }
 
   getAllPosts(): Observable<Post[]> {
-    return this.http.get<Post[]>(this.apiUrl);
+    return this.http.get<Post[]>(`${this.apiUrl}posts`);
   }
 }
