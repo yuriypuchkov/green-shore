@@ -1,22 +1,24 @@
   <mat-dialog-content >
     <div class='dialog-container'>
       <mat-form-field>
-        <input matInput placeholder='Name' [(ngModel)]='entry.author.name'>
+        <input matInput placeholder='Name' [formControl]="nameControl" [(ngModel)]='entry.author.name' required>
+        <mat-error *ngIf="nameControl.invalid">{{getNameErrorMessage()}}</mat-error>
       </mat-form-field>
 
       <mat-form-field>
-        <input matInput  placeholder='Email' [(ngModel)]='entry.author.email'>
+        <input matInput  placeholder='Email' [(ngModel)]='entry.author.email' >
       </mat-form-field>
 
       <mat-form-field>
-        <input matInput   placeholder='Phone' [(ngModel)]='entry.author.phone'>
+        <input matInput   placeholder='Phone' [(ngModel)]='entry.author.phone' >
       </mat-form-field>
 
       <mat-form-field>
-        <input matInput  placeholder='Website' [(ngModel)]='entry.author.website'>
+        <input matInput  placeholder='Website' [(ngModel)]='entry.author.website' >
       </mat-form-field>
     <mat-form-field>
-      <textarea matInput  placeholder='Message' [(ngModel)]='entry.message'></textarea>
+      <textarea matInput  placeholder='Message' [formControl]="messageControl" [(ngModel)]='entry.message' required ></textarea>
+      <mat-error *ngIf="messageControl.invalid">{{getMessageErrorMessage()}}</mat-error>
     </mat-form-field>
     </div>
   </mat-dialog-content>

@@ -39,7 +39,7 @@ import { GuestBookItemComponent } from './guest-book/guest-book-item/guest-book-
 import { guestBookReducer } from './guest-book/store/guest-book.reducer';
 import { GuestBookNewEntryComponent } from './guest-book/guest-book-new-entry/guest-book-new-entry.component';
 import { GuestBookAuthorInfoComponent } from './guest-book/guest-book-author-info/guest-book-author-info.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -73,6 +73,7 @@ import { FormsModule } from '@angular/forms';
     MatIconModule,
     MatDialogModule,
     FormsModule,
+    ReactiveFormsModule,
     StoreModule.forRoot({}),
     StoreDevtoolsModule.instrument({
       name: 'APM Demo App DevTools',
