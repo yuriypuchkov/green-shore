@@ -8,7 +8,7 @@ import { User } from './model/user.model';
 })
 export class UserService {
 
-  private apiUrl = `http://jsonplaceholder.typicode.com/`;
+  private apiUrl = `https://cors-anywhere.herokuapp.com/http://jsonplaceholder.typicode.com/`;
   constructor(private http: HttpClient) { }
 
   getAllUsers(): Observable<User[]> {

@@ -1,17 +1,27 @@
 import { Injectable } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Post } from "./model/Post";
+import * as model from './model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PostService {
 
-  private apiUrl = `http://jsonplaceholder.typicode.com/`;
+  private cors = `https://cors-anywhere.herokuapp.com/`;
+  private apiUrl = `${this.cors}http://jsonplaceholder.typicode.com/`;
   constructor(private http: HttpClient) { }
 
-  getAllPosts(): Observable<Post[]> {
-    return this.http.get<Post[]>(`${this.apiUrl}posts`);
+  getAllPosts(): Observable<model.Post[]> {
+
+    const headerDict = {
+      'X-Requested-With': 'XMLHttpRequest'
+    };
+
+    const requestOptions = {
+      headers: new HttpHeaders(headerDict)
+    };
+
+    return this.http.get<model.Post[]>(`${this.apiUrl}posts`, requestOptions);
   }
 }
