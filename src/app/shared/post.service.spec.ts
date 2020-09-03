@@ -1,12 +1,18 @@
-import { TestBed } from '@angular/core/testing';
+import { PostService } from "./post.service"
 
-import { PostServiceService } from './post-service.service';
+describe('PostService', ()=>{
+  let service: PostService;
+  let http;
 
-describe('BlogServiceService', () => {
-  beforeEach(() => TestBed.configureTestingModule({}));
+  beforeEach(() => {
+    http = jasmine.createSpyObj(['get']);
+    service = new PostService(http);
+  });
 
-  it('should be created', () => {
-    const service: PostServiceService = TestBed.get(PostServiceService);
-    expect(service).toBeTruthy();
+  it('hould call correct url', () => {
+    const expectedApiUrl = `http://jsonplaceholder.typicode.com/posts`;
+    service.getAllPosts();
+
+    expect(http.get).toHaveBeenCalledWith(expectedApiUrl);
   });
 });

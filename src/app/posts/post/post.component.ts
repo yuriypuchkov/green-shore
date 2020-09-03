@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Post } from '../../shared/model/post.model';
+import { Post } from "../../shared/model/Post";
 import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { getCurrentPost, getCurrentPostId } from '../store/posts.selectors';

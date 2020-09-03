@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Post } from '../../shared/model/post.model';
+import { Post } from "../../shared/model/Post";
 import { PostPageActions } from '../store/actions';
 
 import { Store } from '@ngrx/store';

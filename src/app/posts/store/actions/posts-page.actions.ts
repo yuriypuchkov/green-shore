@@ -1,6 +1,6 @@
 /* NgRx */
 import { createAction, props } from '@ngrx/store';
-import { Post } from 'src/app/shared/model/post.model';
+import { Post } from "src/app/shared/model/Post";
 
 export const loadPosts = createAction(
   '[Post Page] Load Posts'

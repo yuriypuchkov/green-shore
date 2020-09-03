@@ -1,16 +1,18 @@
-import { TestBed } from '@angular/core/testing';
+import { CommentsService } from "./comments.service"
 
-import { CommentsService } from './comments.service';
-
-describe('CommentsService', () => {
+describe('PostService', ()=>{
   let service: CommentsService;
+  let http;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(CommentsService);
+    http = jasmine.createSpyObj(['get']);
+    service = new CommentsService(http);
   });
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
+  it('should call correct url', () => {
+    const expectedApiUrl = `http://jsonplaceholder.typicode.com/comments`;
+    service.getAllComments();
+
+    expect(http.get).toHaveBeenCalledWith(expectedApiUrl);
   });
 });

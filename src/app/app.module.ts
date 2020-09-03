@@ -20,7 +20,6 @@ import { CommentItemComponent } from './comments/comments-list-item/comments-lis
 import { PostsListItemComponent } from './posts/posts-list-item/posts-list-item.component';
 import { MatDividerModule } from '@angular/material/divider';
 import { PostComponent } from './posts/post/post.component';
-import { UserInfoComponent } from './user/user-info/user-info.component';
 
 
 import { MatMenuModule } from '@angular/material/menu';
@@ -50,7 +49,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommentItemComponent,
     PostsListItemComponent,
     PostComponent,
-    UserInfoComponent,
     MenuComponent,
     GuestBookContainerComponent,
     GuestBookItemComponent,
